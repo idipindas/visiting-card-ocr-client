@@ -10,7 +10,7 @@ const CardList = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/cards");
+        const response = await axios.get("https://visiting-card-ocer-server.onrender.com/api/cards");
         setCards(response.data);
       } catch (err) {
         setError("Failed to fetch data. Please try again later.");
