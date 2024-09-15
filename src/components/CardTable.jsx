@@ -10,7 +10,9 @@ const CardList = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const response = await axios.get("https://visiting-card-ocer-server.onrender.com/api/cards");
+        const response = await axios.get(
+          "https://visiting-card-ocer-server.onrender.com/api/cards"
+        );
         setCards(response.data);
       } catch (err) {
         setError("Failed to fetch data. Please try again later.");
@@ -29,7 +31,9 @@ const CardList = () => {
     <div className="card-list">
       <div className="header">
         <h2>Saved Visiting Cards</h2>
-        <Link to="/upload" className="add-button">Add Visiting Card</Link>
+        <Link to="/upload" className="add-button">
+          Add Visiting Card
+        </Link>
       </div>
       <div className="table-responsive">
         <table className="table">
@@ -54,7 +58,11 @@ const CardList = () => {
                 <tr key={index}>
                   <td>
                     {card.imagePath ? (
-                      <img src={`http://localhost:5000/${card.imagePath}`} alt="Card" className="card-image" />
+                      <img
+                        src={`http://localhost:5000/${card.imagePath}`}
+                        alt="Card"
+                        className="card-image"
+                      />
                     ) : (
                       <p>No image</p>
                     )}

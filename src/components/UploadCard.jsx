@@ -17,7 +17,7 @@ const UploadCard = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
-  const [uploadedImageFile,setUploadedImageFile]  =useState()
+  const [uploadedImageFile, setUploadedImageFile] = useState();
 
   // const onDrop = (acceptedFiles) => {
   //   const file = acceptedFiles[0];
@@ -30,7 +30,7 @@ const UploadCard = () => {
     setUploadedImageFile(file); // Store the file for upload
     processOCR(file);
   };
-  
+
   const processOCR = (file) => {
     setIsLoading(true);
 
@@ -105,23 +105,27 @@ const UploadCard = () => {
 
   const handleSave = async () => {
     setIsSaving(true);
-  
+
     // Create FormData object
     const formData = new FormData();
-    formData.append('image', uploadedImageFile); // Append the image file
-    formData.append('name', ocrResult.name);
-    formData.append('jobTitle', ocrResult.jobTitle);
-    formData.append('company', ocrResult.company);
-    formData.append('email', ocrResult.email);
-    formData.append('phone', ocrResult.phone);
-    formData.append('address', ocrResult.address);
-  
+    formData.append("image", uploadedImageFile); // Append the image file
+    formData.append("name", ocrResult.name);
+    formData.append("jobTitle", ocrResult.jobTitle);
+    formData.append("company", ocrResult.company);
+    formData.append("email", ocrResult.email);
+    formData.append("phone", ocrResult.phone);
+    formData.append("address", ocrResult.address);
+
     try {
-      const response = await axios.post("https://visiting-card-ocer-server.onrender.com/api/saveCardData", formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
+      const response = await axios.post(
+        "https://visiting-card-ocer-server.onrender.com/api/saveCardData",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
-      });
+      );
       navigate("/");
 
       if (response) {
