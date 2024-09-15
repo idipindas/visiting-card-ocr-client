@@ -59,7 +59,7 @@ const CardList = () => {
                   <td>
                     {card.imagePath ? (
                       <img
-                        src={`http://localhost:5000/${card.imagePath}`}
+                        src={`https://visiting-card-ocer-server.onrender.com/${card.imagePath}`}
                         alt="Card"
                         className="card-image"
                       />
