@@ -75,11 +75,8 @@ const UploadCard = () => {
   const handleSave = async () => {
     setIsSaving(true);
     try {
-      const response = await axios.post(
-        "https://visiting-card-ocer-server.onrender.com/api/saveCardData",
-        ocrResult
-      );
-      if (response) {
+      const response = await axios.post("https://visiting-card-ocer-server.onrender.com/api/saveCardData", ocrResult);
+      if(response){
         setOcrResult({
           name: "",
           jobTitle: "",
