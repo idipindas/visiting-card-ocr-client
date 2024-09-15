@@ -68,3 +68,33 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The frontend of this application is built using React and provides a user-friendly interface for interacting with visiting card data. Below is an overview of the key components and functionality of the frontend:
+
+Features
+Image Upload and OCR Processing
+
+Upload Interface: Users can upload images of visiting cards using a drag-and-drop area or traditional file input method.
+OCR Integration: The application utilizes Tesseract.js to perform Optical Character Recognition (OCR) on the uploaded images, extracting relevant text data such as name, job title, company, email, phone number, and address.
+Image Preview: Once an image is uploaded, a preview of the image is displayed before processing begins.
+Form for Card Details
+
+Automatic Population: Extracted text data from the OCR process is automatically populated into predefined text fields for user review and editing.
+Manual Input: Users can manually enter or correct the extracted information if any fields are missing or incorrect.
+Save Functionality
+
+Save Button: After reviewing and editing the card details, users can save the data to the backend server.
+API Integration: The frontend communicates with the backend API to save the card data, and provides feedback to the user upon successful or failed save attempts.
+List of Saved Cards
+
+Card List Page: Users can view a list of previously saved visiting cards, including details such as name, job title, company, email, phone number, and address.
+Navigation: Users can navigate between different pages, including a page for uploading new cards and a page for viewing the list of saved cards.
+Technologies Used
+React: For building the user interface and managing application state.
+Tesseract.js: For performing Optical Character Recognition on the uploaded images.
+Axios: For making HTTP requests to the backend API.
+React Router: For handling navigation between different pages within the application.
+CSS: For styling the components and ensuring a responsive design.
+
+Running the Frontend
+Install Dependencies: Run npm install to install all the necessary dependencies.
+Start the Development Server: Run npm start to start the development server and open the application in your default web browser.

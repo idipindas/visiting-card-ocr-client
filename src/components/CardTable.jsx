@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 
 const CardList = () => {
   const [cards, setCards] = useState([]);
@@ -35,6 +35,7 @@ const CardList = () => {
         <table className="table">
           <thead>
             <tr>
+              <th>Image</th> {/* New column for image */}
               <th>Name</th>
               <th>Job Title</th>
               <th>Company</th>
@@ -46,11 +47,18 @@ const CardList = () => {
           <tbody>
             {cards.length === 0 ? (
               <tr>
-                <td colSpan="6">No cards found</td>
+                <td colSpan="7">No cards found</td>
               </tr>
             ) : (
               cards.map((card, index) => (
                 <tr key={index}>
+                  <td>
+                    {card.imagePath ? (
+                      <img src={`http://localhost:5000/${card.imagePath}`} alt="Card" className="card-image" />
+                    ) : (
+                      <p>No image</p>
+                    )}
+                  </td>
                   <td>{card.name}</td>
                   <td>{card.jobTitle}</td>
                   <td>{card.company}</td>
